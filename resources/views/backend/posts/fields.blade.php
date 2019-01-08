@@ -43,7 +43,7 @@
             {{ html()->label(__('validation.attributes.backend.posts.status'))->class('col-md-2 form-control-label')->for('status') }}
             <div class="col-md-10">
                 
-                    {{ html()->select('status',[ ])
+                    {{ html()->select('status',[   'Draft'=>'Draft',   'Pending'=>'Pending', ])
                     ->class('form-control')
                     ->placeholder(__('validation.attributes.backend.posts.status'))
                         ->required()
@@ -84,7 +84,7 @@
             {{ html()->label(__('validation.attributes.backend.posts.author'))->class('col-md-2 form-control-label')->for('author') }}
             <div class="col-md-10">
                 
-                    {{ html()->select('author',[ ])
+                    {{ html()->select('author',[   'Administrator'=>'Administrator',   'Demo'=>'Demo', ])
                     ->class('form-control')
                     ->placeholder(__('validation.attributes.backend.posts.author'))
                         ->required()

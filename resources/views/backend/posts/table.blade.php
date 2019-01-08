@@ -24,11 +24,11 @@
                    @endif
                </td> 
                 <td>{{  $post->title }}</td>  
-                @php   $status_arr=[];@endphp
+                @php   $status_arr=[ 'Draft'=>'Draft',  'Pending'=>'Pending', ];@endphp
                 <td>{{ $post->status ? $status_arr [$post->status ]:'N/A'}}</td>  
                 <td>{{  $post->pinned }}</td>  
                 <td>{{  $post->promoted }}</td>  
-                @php   $author_arr=[];@endphp
+                @php   $author_arr=[ 'Administrator'=>'Administrator',  'Demo'=>'Demo', ];@endphp
                 <td>{{ $post->author ? $author_arr [$post->author ]:'N/A'}}</td>  
                 
 
