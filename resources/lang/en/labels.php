@@ -138,8 +138,28 @@ return [
                 'deleted_at' => 'Deleted At',
                 'last_updated' => 'Last Update'
             ]
-        ]
+        ],
         //end_Post_end
+
+        //start_Test_start
+        'tests' => [
+            'management' => ' Tests Management',
+            'create' => 'Create Test',
+            'view' => 'View Test',
+            'edit' => 'Edit Test',
+
+            'table' => [
+                'sort' => 'Sort',
+                'total' => ' Tests total| Tests total'
+            ],
+
+            'content' => [
+                'created_at' => 'Created At',
+                'deleted_at' => 'Deleted At',
+                'last_updated' => 'Last Update'
+            ]
+        ]
+        //end_Test_end
 
         // Do not delete me :) I'm used for auto-generation
     ],
