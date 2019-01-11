@@ -2,10 +2,12 @@
     <table class="table">
         <thead>
         <tr>
-                <th>{{ __('labels.backend.posts.table.name') }}</th>
-                <th>{{ __('labels.backend.posts.table.description') }}</th>
-                <th>{{ __('labels.backend.posts.table.visible_radius') }}</th>
-                <th>{{ __('labels.backend.posts.table.order') }}</th>
+                <th>{{ __('labels.backend.posts.table.image') }}</th>
+                <th>{{ __('labels.backend.posts.table.title') }}</th>
+                <th>{{ __('labels.backend.posts.table.status') }}</th>
+                <th>{{ __('labels.backend.posts.table.pinned') }}</th>
+                <th>{{ __('labels.backend.posts.table.promoted') }}</th>
+                <th>{{ __('labels.backend.posts.table.author') }}</th>
                 
             <th>{{ __('labels.general.actions') }}</th>
         </tr>
@@ -14,10 +16,20 @@
         @foreach ($posts as $post)
         <tr>
              
-                <td>{{  $post->name }}</td>  
-                <td>{{  $post->description }}</td>  
-                <td>{{  $post->visible_radius }}</td>  
-                <td>{{  $post->order }}</td>  
+                <td style="width:30px">
+                    @if (!empty($post) && $post->image)
+                       {!! html()->img($post->image_url)->class('img-fluid')  !!}
+                   @else
+                       {!! html()->i()->class('fa fa-image fa-3x')  !!}
+                   @endif
+               </td> 
+                <td>{{  $post->title }}</td>  
+                @php   $status_arr=[ 'yes'=>'Yes',  'no'=>'No', ];@endphp
+                <td>{{ $post->status ? $status_arr [$post->status ]:'N/A'}}</td>  
+                <td>{{  $post->pinned }}</td>  
+                <td>{{  $post->promoted }}</td>  
+                @php   $author_arr=[ 'Administrator'=>'Administrator',  'Demo'=>'Demo', ];@endphp
+                <td>{{ $post->author ? $author_arr [$post->author ]:'N/A'}}</td>  
                 
 
                <td>{!! $post->action_buttons !!}</td>
