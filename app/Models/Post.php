@@ -31,6 +31,17 @@ class Post extends Model
     public $timestamps = ["create_at", "update_at"];
 
     /**
+     * @var array
+     */
+    protected $fieldSearchable = [
+        "title",
+        "status",
+        "pinned",
+        "promoted",
+        "author"
+    ];
+
+    /**
      * The attributes that should be mutated to dates.
      *
      * @var array
