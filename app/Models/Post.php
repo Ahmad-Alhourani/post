@@ -19,7 +19,14 @@ class Post extends Model
      * @var array
      */
 
-    protected $fillable = ["name", "description", "visible_radius", "order"];
+    protected $fillable = [
+        "image",
+        "title",
+        "status",
+        "pinned",
+        "promoted",
+        "author"
+    ];
 
     public $timestamps = ["create_at", "update_at"];
 
@@ -46,6 +53,11 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'id';
+    }
+
+    public function getImageUrlAttribute()
+    {
+        return !empty($this->image) ? Storage::url($this->image) : null;
     }
 
     // ***********************************************************

@@ -60,8 +60,28 @@ class PostController extends Controller
      */
     public function store(CreatePost $request)
     {
+        if (request()->hasFile('image_file')) {
+            $path = $request->file('image_file')->store('public');
+            $request['image'] = $path;
+        }
+
+        $req = $request->only(["pinned"]);
+        if (!$req) {
+            $request["pinned"] = 0;
+        }
+        $req = $request->only(["promoted"]);
+        if (!$req) {
+            $request["promoted"] = 0;
+        }
         $obj = $this->postRepository->create(
-            $request->only(["name", "description", "visible_radius", "order"])
+            $request->only([
+                "image",
+                "title",
+                "status",
+                "pinned",
+                "promoted",
+                "author"
+            ])
         );
 
         event(new PostCreated($obj));
@@ -108,6 +128,19 @@ class PostController extends Controller
      */
     public function update(UpdatePost $request, Post $post)
     {
+        if (request()->hasFile('image_file')) {
+            $path = $request->file('image_file')->store('public');
+            $request['image'] = $path;
+        }
+
+        $req = $request->only(["pinned"]);
+        if (!$req) {
+            $request["pinned"] = 0;
+        }
+        $req = $request->only(["promoted"]);
+        if (!$req) {
+            $request["promoted"] = 0;
+        }
         $obj = $this->postRepository->update($post, $request->all());
 
         event(new PostUpdated($obj));
