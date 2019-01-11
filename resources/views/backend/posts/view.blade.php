@@ -13,63 +13,41 @@
          </div><!--form-group-->
          
             <div class="form-group row">
-            {{ html()->label(__('validation.attributes.backend.posts.image'))->class('col-md-2 form-control-label')->for('image') }}
-            <div class="col-md-10">
-       
-               @if (!empty($post) && $post->image)
-                    <div>{!! html()->img($post->image_url)->class('img-thumbnail')  !!}</div>
-                @else
-                    <div>{!! html()->i()->class('fa fa-image fa-9x')  !!}</div>
-               @endif
-       </div><!--col-->
-         </div><!--form-group-->
-         
-            <div class="form-group row">
-            {{ html()->label(__('validation.attributes.backend.posts.title'))->class('col-md-2 form-control-label')->for('title') }}
+            {{ html()->label(__('validation.attributes.backend.posts.name'))->class('col-md-2 form-control-label')->for('name') }}
             <div class="col-md-10">
        
 
-                {{ $post->title }}
+                {{ $post->name }}
 
             </div><!--col-->
          </div><!--form-group-->
          
             <div class="form-group row">
-            {{ html()->label(__('validation.attributes.backend.posts.status'))->class('col-md-2 form-control-label')->for('status') }}
+            {{ html()->label(__('validation.attributes.backend.posts.description'))->class('col-md-2 form-control-label')->for('description') }}
             <div class="col-md-10">
        
 
-                {{ $post->status }}
+                {{ $post->description }}
 
             </div><!--col-->
          </div><!--form-group-->
          
             <div class="form-group row">
-            {{ html()->label(__('validation.attributes.backend.posts.pinned'))->class('col-md-2 form-control-label')->for('pinned') }}
+            {{ html()->label(__('validation.attributes.backend.posts.visible_radius'))->class('col-md-2 form-control-label')->for('visible_radius') }}
             <div class="col-md-10">
        
 
-                {{ $post->pinned }}
+                {{ $post->visible_radius }}
 
             </div><!--col-->
          </div><!--form-group-->
          
             <div class="form-group row">
-            {{ html()->label(__('validation.attributes.backend.posts.promoted'))->class('col-md-2 form-control-label')->for('promoted') }}
+            {{ html()->label(__('validation.attributes.backend.posts.order'))->class('col-md-2 form-control-label')->for('order') }}
             <div class="col-md-10">
        
 
-                {{ $post->promoted }}
-
-            </div><!--col-->
-         </div><!--form-group-->
-         
-            <div class="form-group row">
-            {{ html()->label(__('validation.attributes.backend.posts.author'))->class('col-md-2 form-control-label')->for('author') }}
-            <div class="col-md-10">
-       
-
-                {{ $post->author }}
+                {{ $post->order }}
 
             </div><!--col-->
          </div><!--form-group-->
