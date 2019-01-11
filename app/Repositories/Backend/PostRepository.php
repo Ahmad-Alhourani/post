@@ -14,7 +14,6 @@ class PostRepository extends BaseRepository implements CacheableInterface
     protected $defaultSortBy = 'asc';
 
     protected $fieldSearchable = [
-        "image",
         "title",
         "status",
         "pinned",
