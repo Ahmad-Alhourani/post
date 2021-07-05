@@ -44,8 +44,12 @@ class EventServiceProvider extends ServiceProvider
         \App\Listeners\Backend\Auth\Role\RoleEventListener::class,
 
         //start_Post_start
-        \App\Listeners\Backend\PostEventListener::class
+        \App\Listeners\Backend\PostEventListener::class,
         //end_Post_end
+
+        //start_Test_start
+        \App\Listeners\Backend\TestEventListener::class
+        //end_Test_end
 
         // Do not delete me :) I'm used for auto-generation
     ];

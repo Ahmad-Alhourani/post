@@ -49,8 +49,16 @@ return [
             'saved' => 'Post saved successfully.',
             'updated' => 'Post updated successfully.',
             'deleted' => 'Post deleted successfully.'
-        ]
+        ],
         //end_Post_end
+
+        //start_Test_start
+        'test' => [
+            'saved' => 'Test saved successfully.',
+            'updated' => 'Test updated successfully.',
+            'deleted' => 'Test deleted successfully.'
+        ]
+        //end_Test_end
 
         // Do not delete me :) I'm used for auto-generation
     ]

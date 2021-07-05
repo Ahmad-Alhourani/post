@@ -204,8 +204,11 @@ return [
                 'pinned' => "Pinned",
                 'promoted' => "Promoted",
                 'author' => "Author"
-            ]
+            ],
             //end_Post_end
+            //start_Test_start
+            'tests' => []
+            //end_Test_end
             // Do not delete me :) I'm used for auto-generation
         ],
 
